@@ -20,7 +20,7 @@ function Poem({ poemText }: any) {
           <div
             style={{
               fontSize: "12px",
-              marginBottom: "0px",
+              marginBottom: "2px",
               fontWeight: "normal",
             }}
             key={lineIndex}
