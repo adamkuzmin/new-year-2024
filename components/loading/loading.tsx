@@ -12,7 +12,7 @@ const Loading: React.FC<LoadingProps> = ({ intro, setCard, card }) => {
     if (!intro) {
       const f = setTimeout(() => {
         setCard!(true);
-      }, 3000);
+      }, 4500);
 
       return () => {
         clearTimeout(f);
@@ -26,20 +26,20 @@ const Loading: React.FC<LoadingProps> = ({ intro, setCard, card }) => {
         <TextWrapper data-visible={intro || card ? "none" : "visible"}>
           <FadeInDiv
             data-visible={intro || card ? "none" : "visible"}
-            delay="0s"
+            delay="0.5s"
           >
             Прищурь глаза!
           </FadeInDiv>
           <FadeInDiv
             data-visible={intro || card ? "none" : "visible"}
-            delay="1s"
+            delay="1.7s"
           >
             Улыбнись!
           </FadeInDiv>
           <br />
           <FadeInDiv
             data-visible={intro || card ? "none" : "visible"}
-            delay="2s"
+            delay="2.8s"
           >
             Сладкий чак-чак
             <br /> ждет тебя!!
@@ -62,7 +62,7 @@ const fadeIn = keyframes`
 
 const FadeInDiv = styled.div<{ delay: string }>`
   &[data-visible="visible"] {
-    animation: ${fadeIn} 1s ease forwards;
+    animation: ${fadeIn} 1.2s ease forwards;
     animation-delay: ${(props) => props.delay};
     opacity: 0; // Start with opacity 0
   }
@@ -96,7 +96,7 @@ const TextWrapper = styled.div`
 `;
 
 const Saidash = styled.div`
-  transition: all 0.3s ease-in-out;
+  transition: all 0.8s ease-in-out;
 
   &[data-visible="none"] {
     transform: translateX(-100%);
