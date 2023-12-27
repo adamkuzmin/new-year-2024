@@ -40,8 +40,6 @@ const Card: React.FC<CardProps> = ({ guest }) => {
 
   const [isPoemVisible, setIsPoemVisible] = useState(false);
 
-  console.log("role?.poem.content", role?.poem.content);
-
   return (
     <Wrapper>
       <CardWrapper>
@@ -62,7 +60,7 @@ const Card: React.FC<CardProps> = ({ guest }) => {
         {isPoemVisible && <Poem poemText={role?.poem.content} />}
 
         {!isPoemVisible && (
-          <div className="ant-btn" onClick={() => setIsPoemVisible(true)}>
+          <div className="ant-btn" onClick={() => setIsPoemVisible(true)} >
             Прочитать стишок {role?.poem.title}
           </div>
         )}
@@ -133,6 +131,7 @@ const CardWrapper = styled.div`
     background-color: #9f8cff;
     padding: 20px 10px 20px 10px;
     border-radius: 20px;
+    cursor: pointer;
 
     &,
     & * {
