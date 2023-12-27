@@ -1,0 +1,56 @@
+[{
+    "style": "Русский стиль",
+    "id": "a",
+    "guest": "jenya",
+    "label": "Женя"
+}, {
+    "style": "burning man",
+    "id": "b",
+    "guest": "kristina",
+    "label": "Кристина"
+}, {
+    "style": "Дед мороз",
+    "id": "c",
+    "guest": "ilia",
+    "label": "Илья"
+}, {
+    "style": "Ковбой",
+    "id": "d",
+    "guest": "kesha",
+    "label": "Кеша"
+}, {
+    "style": "снегурка (Ж)",
+    "id": "e",
+    "guest": "ksysha",
+    "label": "Ксюша"
+}, {
+    "style": "Арлекино",
+    "id": "f",
+    "guest": "saidash",
+    "label": "Сайдаш"
+}, {
+    "style": "Зайчик",
+    "id": "g",
+    "guest": "yiruu",
+    "label": "Юрий"
+}, {
+    "style": "Элвис пресли",
+    "id": "i",
+    "guest": "andrei",
+    "label": "Андрей"
+}, {
+    "style": "Кукла",
+    "id": "k",
+    "guest": "marina",
+    "label": "Марина"
+}, {
+    "style": "Эльф / Эльфица",
+    "id": "l",
+    "guest": "polina",
+    "label": "Полина"
+}, {
+    "style": "Королева или Король",
+    "id": "m",
+    "guest": "ulyana",
+    "label": "Ульяна"
+}]

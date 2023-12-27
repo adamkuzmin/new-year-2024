@@ -4,31 +4,44 @@ import Loading from "../loading/loading";
 import { useState } from "react";
 import Card from "../card/card";
 
+import roles from "../data/n.json";
+
+import _ from "lodash";
+
 const options = [
   { value: "no", label: "— Выберите гостя —" },
-  { value: "ilia", label: "Илья" },
-  { value: "yurii", label: "Юра" },
-  { value: "kristina", label: "Кристина" },
-  { value: "jenya", label: "Женя" },
-  { value: "ksyusha", label: "Ксюша" },
-  { value: "saidash", label: "Сайдаш" },
-  { value: "polina", label: "Полина" },
-  { value: "kesha", label: "Кеша" },
-  { value: "andrei", label: "Андрей" },
-  { value: "ulyana", label: "Ульяна" },
+  ...roles.map((role) => ({ value: role.guest, label: role.label })),
 ];
 
 const Layout = () => {
   const [intro, setIntro] = useState(true);
   const [card, setCard] = useState(false);
 
+  const [guest, setGuest] = useState<string | null>(null);
+
+  /* // Shuffle roles
+  const shuffledRoles = _.shuffle(roles);
+
+  // Assign roles to people
+  const assignedRoles = [...options]
+    .filter((a) => a.value !== "no")
+    .map((person, index) => {
+      // If there are more people than roles, some people will not get a role
+      if (index < shuffledRoles.length) {
+        return { person: person.label, role: shuffledRoles[index].style };
+      } else {
+        return { person: person.label, role: null };
+      }
+    }); */
+
   const onGuestSelect = (e: any) => {
     setIntro(false);
+    setGuest(e.guest);
   };
 
   return (
     <>
-      {card && <Card />}
+      {card && guest && <Card guest={guest} />}
 
       <Loading intro={intro} setCard={setCard} card={card} />
 
@@ -63,6 +76,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  pointer-events: none;
 `;
 
 const SelectWrapper = styled.div`
@@ -70,10 +85,12 @@ const SelectWrapper = styled.div`
 
   &[data-visible="none"] {
     opacity: 0;
+    pointer-events: none;
   }
 
   &[data-visible="visible"] {
     opacity: 1;
+    pointer-events: all;
   }
 
   & {
